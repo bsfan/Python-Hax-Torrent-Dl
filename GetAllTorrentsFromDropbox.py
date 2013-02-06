@@ -19,7 +19,7 @@ TOKEN_FILE = "______________/token.txt"
 #where to put new torrnets (note: use absolute path)
 TORRENT_FOLDER = '___________'
 #leave the downloaded torrent files on the dropbox server?
-KEEP_ON_SERVER = true
+KEEP_ON_SERVER = True
 
 
 class StoredSession(session.DropboxSession):
@@ -67,5 +67,5 @@ for item in folder:
 		out = open('{0}{1}'.format(TORRENT_FOLDER,item['path'].replace('/','')), 'wb')
 		out.write(f.read())
 		out.close()
-		if not KEEP_ON_SERVER
+		if not KEEP_ON_SERVER:
 			client.file_delete(item['path'])#remove file once we have downloaded it
